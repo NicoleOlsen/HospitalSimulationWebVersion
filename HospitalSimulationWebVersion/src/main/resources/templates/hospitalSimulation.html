@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Heal patients</title>
+     <link href="webjars/bootstrap/4.1.3/css/bootstrap.min.css"
+        rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div class="jumbotron">
+		<div class="container">
+		<div class="well well-sm"><center><h1>Heal patients</h1></center></div>
+		<div style="padding-bottom:50px"></div>
+		    <form action="#" th:action="@{/hospitalSimulation}" th:object="${hospitalSimulation}" method="post">
+			    <div class="form-group">
+				    <label>Patients to be treated</label>
+				    <input type="text" th:field="*{patients}" placeholder="e.g. X,T,D,F,H" class="form-control" />
+				    <small class="form-text text-muted">Valid helath states are F,H,D,T and X.</small>
+			    </div>
+		    <div class="form-group">
+		    <label>Medications to be given</label>
+		    <input type="text" th:field="*{medications}" class="form-control" placeholder="e.g. AS,AN,P,I" />
+		    <small class="form-text text-muted">Valid medications are As,An,I and P.</small>
+		    </div>
+		        <button type="submit" value="Submit" class="btn btn-default">Submit</button>
+		        <button type="reset" value="Reset" class="btn btn-default">Reset</button>
+		        <a href="/"><button type="button" class="btn btn-default">Home</button></a>
+		    </form>
+		</div>
+	</div>
+</body>
+</html>
